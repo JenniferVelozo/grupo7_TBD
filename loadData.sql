@@ -70,61 +70,120 @@ INSERT INTO public.tipo(
 	
 INSERT INTO public.tipo(
 	id, nombre)
-	VALUES ('2', 'arte');
+	VALUES ('2', 'pintura');
 
 ------------------------------------------- COMUNA -------------------------------------------
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('1', 'Santiago', '10');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('2', 'Estacion Central', '10');
 	
-INSERT INTO public.comuna(
-	id, nombre, id_region)
-	VALUES ('3', 'Pudahuel', '10');
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('3', 'Pudahuel', '1');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('4', 'Cerro Navia', '7');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
-	VALUES ('5', 'Arica', '7');
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('5', 'Arica', '4');
 	
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('6', 'Paine', '6');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('7', 'Paina', '6');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('8', 'Providencia', '2');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('9', 'Raccon City', '15');
     
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('10', 'Silent Hill', '2');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('11', 'Pueblo Paleta', '3');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('12', 'Pueblo Lavanda', '5');
 
-INSERT INTO public.comuna(
-	id, nombre, id_region)
+INSERT INTO public.comuna(id, nombre, id_region)
 	VALUES ('13', 'South Park', '10');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('14', 'Paino', '6');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('15', 'Paini', '6');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('16', 'PudahuelSur', '1');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('17', 'PudahuelEste', '1');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('18', 'PudahuelNorte', '2');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('19', 'PudahuelOreste', '2');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('20', 'PudahuelNorOeste', '2');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('21', 'Pueblo Paleta Sur', '3');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('22', 'Pueblo Paleta Norte', '3');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('23', 'Ciudad Azafrán', '4');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('24', 'Ventormenta', '4');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('25', 'Orgrimmar', '5');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('26', 'Darnassus', '5');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('27', 'IslasDelEcho', '5');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('28', 'Laboratorio del Profesor Oak', '7');
 	
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('29', 'Jonia', '7');
+	
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('30', 'Piltover', '8');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('31', 'Freddy Fazbears Pizza', '8');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('32', 'Pueblo Paleta Oriente', '14');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('33', 'Aldea Navideña Sur', '9');
+	
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('34', 'Aldea Navideña Norte', '9');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('35', 'Aldea Aguasturbias', '16');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('36', 'Noxus', '14');
+
+INSERT INTO public.comuna(id, nombre, id_region)
+	VALUES ('37', 'Demacia', '13');
+
 ------------------------------------------- GALERIA -------------------------------------------
 INSERT INTO public.galeria(
 	id, nombre, id_comuna)
@@ -140,7 +199,7 @@ INSERT INTO public.galeria(
     
 INSERT INTO public.galeria(
 	id, nombre, id_comuna)
-	VALUES ('4', 'Galería 4', '5');
+	VALUES ('4', 'Galería 4', '30');
 
 INSERT INTO public.galeria(
 	id, nombre, id_comuna)
@@ -152,13 +211,41 @@ INSERT INTO public.galeria(
 
 INSERT INTO public.galeria(
 	id, nombre, id_comuna)
-	VALUES ('7', 'Galería 7', '2');
+	VALUES ('7', 'Galería 7', '32');
     
 INSERT INTO public.galeria(
 	id, nombre, id_comuna)
-	VALUES ('8', 'Galería 8', '1');
-
-
+	VALUES ('8', 'Galería 8', '4');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('9', 'Galería 9', '1');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('10', 'Galería 10', '1');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('11', 'Galería 11', '11');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('12', 'Galería 12', '21');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('13', 'Galería 13', '25');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('14', 'Galería 14', '27');
+	
+INSERT INTO public.galeria(
+	id, nombre, id_comuna)
+	VALUES ('15', 'Galería 15', '1');
+	
+	
 ------------------------------------------- CLIENTE -------------------------------------------
 INSERT INTO public.cliente(
 	id, nombre, apellido, rut, id_comuna)
@@ -297,8 +384,44 @@ INSERT INTO public.venta(
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
-	VALUES ('6', 'descripcion pendiente', '2020-09-12', 150900, 30, '2', '4');
-    
+	VALUES ('6', 'descripcion pendiente', '2020-09-12', 150900, 30, '2', '1');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('7', 'mi mami me mima', '2020-05-11', 500000, 1002, '2', '3');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('8', 'atomico', '2019-08-02',  990000, 957, '2', '2');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('9', 'no contesta, llamare a su padre', '2019-08-02', 6500, 555, '2', '4');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('10', 'alo?', '2018-08-06', 50990, 3, '2', '5');
+	
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('11', 'hable mas fuerte que tengo una toalla', '2020-10-04', 112300, 5, '2', '2');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('12', 'el mejor producto ever', '2019-04-05', 265440, 7, '2', '5');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('13', 'ta de pana', '2019-11-30', 350000, 5, '2', '3');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('14', 'comprameeee uwu', '2021-08-10', 3000, 5, '2', '8');
+
+INSERT INTO public.venta(
+	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
+	VALUES ('15', 'a', '2021-01-29', 87700, 8, '2', '1');
+	
 ------------------------------------------- PRODUCTO -------------------------------------------
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
@@ -306,27 +429,27 @@ INSERT INTO public.producto(
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('2', 'producto 2', 5600, 1, 5, 2, 2, 1);
+	VALUES ('2', 'producto 2', 5600, 1, 5, 2, 2, 2);
     
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('3', 'producto 3', 18000, 1, 10, 3, 1, 7);
+	VALUES ('3', 'producto 3', 18000, 1, 10, 3, 1, 3);
     
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('4', 'producto 4', 96500, 1, 23, 4, 2, 3);
+	VALUES ('4', 'producto 4', 96500, 1, 23, 4, 2, 4);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('5', 'producto 5', 34900, 1, 7, 5, 1, 8);
+	VALUES ('5', 'producto 5', 34900, 1, 7, 5, 1, 5);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('6', 'producto 6', 150900, 1, 30, 6, 2, 8);
+	VALUES ('6', 'producto 6', 150900, 1, 30, 6, 2, 6);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('7', 'producto 7', 34900, 0, 14, null, 1, 8);
+	VALUES ('7', 'producto 7', 34900, 0, 14, null, 1, 7);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
@@ -334,28 +457,72 @@ INSERT INTO public.producto(
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('9', 'producto 9', 500000, 0, 1002, null, 1, 1);
+	VALUES ('9', 'producto 9', 500000, 1, 1002, 7, 1, 9);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('10', 'producto 10', 1200000, 0, 1325, null, 1, 3);
+	VALUES ('10', 'producto 10', 1200000, 0, 1325, null, 1, 10);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('11', 'producto 11', 990000, 0, 957, null, 2, 8);
+	VALUES ('11', 'producto 11', 990000, 1, 957, 8, 2, 11);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('12', 'producto 12', 23000, 0, 43, null, 2, 3);
+	VALUES ('12', 'producto 12', 23000, 0, 43, null, 2, 12);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('13', 'producto 13', 45300, 0, 8, null, 1, 4);
+	VALUES ('13', 'producto 13', 45300, 0, 8, null, 1, 13);
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('14', 'producto 14', 12300, 0, 5, null, 2, 5);
+	VALUES ('14', 'producto 14', 12300, 0, 5, null, 2, 14);
 
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('15', 'producto 15', 3000, 1, 5, 14, 2, 5);
+	
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('16', 'producto 16', 112300, 1, 5, 11, 2, 15);
+
+-- HAY QUE VARIAR  DE AQUI PA ABAJO
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('17', 'producto 17', 6500, 1, 555, 9, 2, 2);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('18', 'producto 18', 350000, 1, 5, 13, 2, 3);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('19', 'producto 19', 265440, 1, 7, 12, 2, 4);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('20', 'producto 20', 50990, 1, 3, 10, 2, 5);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('21', 'producto 21', 87700, 1, 8, 15, 2, 6);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('22', 'producto 22', 479900, 0, 5, null, 2, 7);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('23', 'producto 23', 500, 0, 5, null, 2, 8);
+	
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('24', 'producto 24', 780000, 0, 5, null, 2, 9);
+
+INSERT INTO public.producto(
+	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
+	VALUES ('25', 'producto 25', 90000, 0, 5, null, 2, 10);
 
 ------------------------------------------- SUELDO -------------------------------------------
 INSERT INTO public.sueldo(
@@ -429,4 +596,23 @@ INSERT INTO public.sueldo(
 INSERT INTO public.sueldo(
 	id, monto_total, fecha, id_empleado, id_vendedor)
 	VALUES ('18', 634254, '2021-04-14', null, '8');
-	
+
+INSERT INTO public.sueldo(
+	id, monto_total, fecha, id_empleado, id_vendedor)
+	VALUES ('19', 13513, '2020-12-21', '2', null);
+
+INSERT INTO public.sueldo(
+	id, monto_total, fecha, id_empleado, id_vendedor)
+	VALUES ('20', 367853, '2019-01-02', null, '7');
+
+INSERT INTO public.sueldo(
+	id, monto_total, fecha, id_empleado, id_vendedor)
+	VALUES ('21', 123456, '2021-02-22', null, '1');
+
+INSERT INTO public.sueldo(
+	id, monto_total, fecha, id_empleado, id_vendedor)
+	VALUES ('22', 1436853, '2019-07-11', '10', null);
+
+INSERT INTO public.sueldo(
+	id, monto_total, fecha, id_empleado, id_vendedor)
+	VALUES ('23', 987654, '2020-09-06', null, '3');
