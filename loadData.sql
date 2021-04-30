@@ -376,7 +376,7 @@ INSERT INTO public.venta(
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
-	VALUES ('4', 'ta bonitu uwu', '2021-04-22', 96500, 23, '5', '7');
+	VALUES ('4', 'ta bonitu uwu', '2021-04-22', 96500, 23, '5', '4');
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
@@ -384,7 +384,7 @@ INSERT INTO public.venta(
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
-	VALUES ('6', 'descripcion pendiente', '2020-09-12', 150900, 30, '2', '1');
+	VALUES ('6', 'descripcion pendiente', '2021-04-03', 150900, 30, '2', '1');
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
@@ -392,7 +392,7 @@ INSERT INTO public.venta(
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
-	VALUES ('8', 'atomico', '2019-08-02',  990000, 957, '2', '2');
+	VALUES ('8', 'atomico', '2021-04-02',  990000, 957, '2', '2');
 
 INSERT INTO public.venta(
 	id, descripcion, fecha, monto_total, peso_total, id_cliente, id_vendedor)
@@ -425,104 +425,104 @@ INSERT INTO public.venta(
 ------------------------------------------- PRODUCTO -------------------------------------------
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('1', 'producto 1', 230000, 1, 2, 1, 1, 1);
+	VALUES ('1', 'producto 1', 230000, 1, 2, '1', '1', '1');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('2', 'producto 2', 5600, 1, 5, 2, 2, 2);
+	VALUES ('2', 'producto 2', 5600, 1, 5, '2', '2', '2');
     
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('3', 'producto 3', 18000, 1, 10, 3, 1, 3);
+	VALUES ('3', 'producto 3', 18000, 1, 10, '3', '1', '3');
     
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('4', 'producto 4', 96500, 1, 23, 4, 2, 4);
+	VALUES ('4', 'producto 4', 96500, 1, 23, '4', '2', '4');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('5', 'producto 5', 34900, 1, 7, 5, 1, 5);
+	VALUES ('5', 'producto 5', 34900, 1, 7, '5', '1', '5');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('6', 'producto 6', 150900, 1, 30, 6, 2, 6);
+	VALUES ('6', 'producto 6', 150900, 1, 30, '6', '1', '6');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('7', 'producto 7', 34900, 0, 14, null, 1, 7);
+	VALUES ('7', 'producto 7', 34900, 0, 14, null, '1', '7');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('8', 'producto 8', 340000, 0, 152, null, 2, 8);
+	VALUES ('8', 'producto 8', 340000, 0, 152, null, '2', '8');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('9', 'producto 9', 500000, 1, 1002, 7, 1, 9);
+	VALUES ('9', 'producto 9', 500000, 1, 1002, '7', '1', '9');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('10', 'producto 10', 1200000, 0, 1325, null, 1, 10);
+	VALUES ('10', 'producto 10', 1200000, 0, 1325, null, '1', '10');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('11', 'producto 11', 990000, 1, 957, 8, 2, 11);
+	VALUES ('11', 'producto 11', 990000, 1, 957, '8', '1', '11');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('12', 'producto 12', 23000, 0, 43, null, 2, 12);
+	VALUES ('12', 'producto 12', 23000, 0, 43, null, '2', '12');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('13', 'producto 13', 45300, 0, 8, null, 1, 13);
+	VALUES ('13', 'producto 13', 45300, 0, 8, null, '1', '13');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('14', 'producto 14', 12300, 0, 5, null, 2, 14);
+	VALUES ('14', 'producto 14', 12300, 0, 5, null, '2', '14');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('15', 'producto 15', 3000, 1, 5, 14, 2, 5);
+	VALUES ('15', 'producto 15', 3000, 1, 5, '14', '2', '5');
 	
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('16', 'producto 16', 112300, 1, 5, 11, 2, 15);
+	VALUES ('16', 'producto 16', 112300, 1, 5, '11', '2', '15');
 
 -- HAY QUE VARIAR  DE AQUI PA ABAJO
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('17', 'producto 17', 6500, 1, 555, 9, 2, 2);
+	VALUES ('17', 'producto 17', 6500, 1, 555, '9', '2', '2');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('18', 'producto 18', 350000, 1, 5, 13, 2, 3);
+	VALUES ('18', 'producto 18', 350000, 1, 5, '13', '2', '3');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('19', 'producto 19', 265440, 1, 7, 12, 2, 4);
+	VALUES ('19', 'producto 19', 265440, 1, 7, '12', '2', '4');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('20', 'producto 20', 50990, 1, 3, 10, 2, 5);
+	VALUES ('20', 'producto 20', 50990, 1, 3, '10', '2', '5');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('21', 'producto 21', 87700, 1, 8, 15, 2, 6);
+	VALUES ('21', 'producto 21', 87700, 1, 8, '15', '2', '6');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('22', 'producto 22', 479900, 0, 5, null, 2, 7);
+	VALUES ('22', 'producto 22', 479900, 0, 5, null, '2', '7');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('23', 'producto 23', 500, 0, 5, null, 2, 8);
+	VALUES ('23', 'producto 23', 500, 0, 5, null, '2', '8');
 	
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('24', 'producto 24', 780000, 0, 5, null, 2, 9);
+	VALUES ('24', 'producto 24', 780000, 0, 5, null, '2', '9');
 
 INSERT INTO public.producto(
 	id, nombre, precio, estado, peso, id_venta, id_tipo, id_galeria)
-	VALUES ('25', 'producto 25', 90000, 0, 5, null, 2, 10);
+	VALUES ('25', 'producto 25', 90000, 0, 5, null, '2', '10');
 
 ------------------------------------------- SUELDO -------------------------------------------
 INSERT INTO public.sueldo(

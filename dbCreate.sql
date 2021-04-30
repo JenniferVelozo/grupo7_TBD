@@ -5,31 +5,7 @@
 -- Dumped from database version 13.2
 -- Dumped by pg_dump version 13.2
 
--- Started on 2021-04-22 21:41:12
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-DROP DATABASE "galeriaArte";
---
--- TOC entry 3053 (class 1262 OID 16516)
--- Name: galeriaArte; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE "galeriaArte" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'Spanish_Chile.1252';
-
-
-ALTER DATABASE "galeriaArte" OWNER TO postgres;
-
-\connect "galeriaArte"
+-- Started on 2021-04-23 21:55:17
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -124,7 +100,6 @@ CREATE TABLE public.producto (
 
 
 ALTER TABLE public.producto OWNER TO postgres;
-
 
 --
 -- TOC entry 205 (class 1259 OID 16532)
@@ -418,9 +393,17 @@ ALTER TABLE ONLY public.venta
     ADD CONSTRAINT fk_venta_vendedor FOREIGN KEY (id_vendedor) REFERENCES public.vendedor(id);
 
 
--- Completed on 2021-04-22 21:41:13
+-- Completed on 2021-04-23 21:55:18
 
 --
 -- PostgreSQL database dump complete
 --
 
+
+
+	
+
+
+
+
+	
