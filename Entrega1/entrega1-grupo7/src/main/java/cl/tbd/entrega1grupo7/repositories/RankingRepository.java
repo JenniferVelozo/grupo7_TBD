@@ -6,4 +6,6 @@ public interface RankingRepository {
     public int countRankings();
     public List<Ranking> getAllRankings();
     public Ranking createRanking(Ranking ranking);
+    public Ranking updateRanking(Ranking ranking, Integer id);
+    public List<Ranking> deleteRanking(Integer id);
 }

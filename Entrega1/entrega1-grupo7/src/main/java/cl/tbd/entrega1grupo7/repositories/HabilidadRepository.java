@@ -6,4 +6,6 @@ public interface HabilidadRepository {
     public int countHabilidades();
     public List<Habilidad> getAllHabilidades();
     public Habilidad createHabilidad(Habilidad habilidad);
+    public Habilidad updateHabilidad(Habilidad habilidad, Integer id);
+    public List<Habilidad> deleteHabilidad(Integer id);
 }

@@ -54,4 +54,37 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
             return null;
         }   
     }
+
+    @Override
+    public Emergencia updateEmergencia(Emergencia emergencia, Integer id) {
+        try(Connection conn = sql2o.open()){
+            //int insertedId = (int) 
+            conn.createQuery("UPDATE emergencia SET nombre = :nombre, descrip = :descrip, finicio = :finicio, ffin = :ffin, id_institucion = :id_institucion WHERE id = :id" , true)
+                    .addParameter("id", id)
+                    .addParameter("nombre", emergencia.getNombre())
+                    .addParameter("descrip", emergencia.getDescrip())
+                    .addParameter("finicio", emergencia.getFinicio())
+                    .addParameter("ffin", emergencia.getFfin())
+                    .addParameter("id_institucion", emergencia.getIdInstitucion())
+                    .executeUpdate();//.getKey();
+            //emergencia.setId(insertedId);
+            return emergencia;        
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }   
+    }
+
+    @Override
+    public List<Emergencia> deleteEmergencia(Integer id) {
+        try(Connection conn = sql2o.open()){
+            return conn.createQuery("DELETE FROM emergencia WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetch(Emergencia.class);
+        } catch (Exception e) {
+            //System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }

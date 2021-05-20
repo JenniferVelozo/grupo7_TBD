@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -38,5 +41,19 @@ public class EmergenciaService {
     public Emergencia createEmergencia(@RequestBody Emergencia emergencia){
         Emergencia result = emergenciaRepository.createEmergencia(emergencia);
         return result;
+    }
+
+    @PutMapping("/emergencias/{id}")
+    @ResponseBody
+    public Emergencia updateEmergencia(@RequestBody Emergencia emergencia, @PathVariable Integer id){
+        Emergencia result = emergenciaRepository.updateEmergencia(emergencia, id);
+        return result;
+    }
+
+    @DeleteMapping("/emergencias/{id}")
+    @ResponseBody
+    public List<Emergencia> deleteEmergencia(@PathVariable Integer id){
+        emergenciaRepository.deleteEmergencia(id);
+        return emergenciaRepository.getAllEmergencias();
     }
 }

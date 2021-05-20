@@ -13,18 +13,18 @@ public class Tarea_habilidad {
         this.id = id;
     }
 
-    public Integer getId_emehab() {
+    public Integer getIdEmehab() {
         return id_emehab;
     }
-    public void setId_emehab(Integer id_emehab) {
+    public void setIdEmehab(Integer id_emehab) {
         this.id_emehab = id_emehab;
     }
 
-    public Integer getId_tarea() {
+    public Integer getIdTarea() {
         return id_tarea;
     }
 
-    public void setId_tarea(Integer id_tarea) {
+    public void setIdTarea(Integer id_tarea) {
         this.id_tarea = id_tarea;
     }
     

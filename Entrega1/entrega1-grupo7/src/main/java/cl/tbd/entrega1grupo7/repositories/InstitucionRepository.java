@@ -6,4 +6,6 @@ public interface InstitucionRepository {
     public int countInstituciones();
     public List<Institucion> getAllInstituciones();
     public Institucion createInstitucion(Institucion institucion);
+    public Institucion updateInstitucion(Institucion institucion, Integer id);
+    public List<Institucion> deleteInstitucion(Integer id);
 }
