@@ -5,6 +5,7 @@ import cl.tbd.entrega1grupo7.models.Tarea;
 public interface TareaRepository {
     public int countTareas();
     public List<Tarea> getAllTareas();
+    public List<Tarea> filtrarTareas(Integer id);
     public Tarea createTarea(Tarea tarea);
     public Tarea updateTarea(Tarea tarea, Integer id);
     public List<Tarea> deleteTarea(Integer id);

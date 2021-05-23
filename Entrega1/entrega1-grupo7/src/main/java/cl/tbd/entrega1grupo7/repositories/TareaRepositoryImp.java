@@ -1,6 +1,7 @@
 package cl.tbd.entrega1grupo7.repositories;
 
 import cl.tbd.entrega1grupo7.models.Tarea;
+import cl.tbd.entrega1grupo7.models.Ranking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
@@ -27,6 +28,20 @@ public class TareaRepositoryImp implements TareaRepository {
     public List<Tarea> getAllTareas() {
         try(Connection conn = sql2o.open()){
             return conn.createQuery("select * from tarea")
+                    .executeAndFetch(Tarea.class);
+        } catch (Exception e) {
+            //System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Tarea> filtrarTareas(Integer id) {
+        try(Connection conn = sql2o.open()){
+            //return conn.createQuery("SELECT FROM tarea AS t LEFT JOIN ranking AS r ON r.id_tarea = t.id WHERE r.id_voluntario = :id")
+            return conn.createQuery("SELECT t.id, t.nombre, t.descrip, t.cant_vol_requeridos, t.cant_vol_inscritos, t.id_emergencia, t.finicio, t.ffin, t.id_estado FROM tarea AS t, ranking AS r WHERE r.id_voluntario = :id AND r.id_tarea = t.id AND r.flg_invitado = 1 AND t.cant_vol_inscritos < t.cant_vol_requeridos AND t.id_estado != 2")
+                    .addParameter("id", id)
                     .executeAndFetch(Tarea.class);
         } catch (Exception e) {
             //System.out.println(e.getMessage());

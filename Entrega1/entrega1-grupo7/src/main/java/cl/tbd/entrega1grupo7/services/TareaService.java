@@ -36,6 +36,12 @@ public class TareaService {
         return String.format("Tienes %s tareas!!", total);
     }
 
+    @GetMapping("/tareas/{id}")
+    public List<Tarea> filtrarTareas(@PathVariable Integer id) {
+        //return "Hello World";
+        return tareaRepository.filtrarTareas(id);
+    }
+
     @PostMapping("/tareas")
     @ResponseBody
     public Tarea createTarea(@RequestBody Tarea tarea){
