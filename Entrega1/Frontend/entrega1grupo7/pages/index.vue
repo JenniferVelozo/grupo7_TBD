@@ -35,7 +35,7 @@
 
     </ul>
     <div v-if="items.length==0" class="empty-list">
-      <em>No se asignado tareas</em>
+      <em>No se han asignado tareas</em>
     </div>
   </div>
 </template>
