@@ -3,24 +3,17 @@
     <header>
       <nav><!-- Enlaces de navegación-->
         <ul>
-          <li>
-            <a href="/lista">Lista</a>
-          </li>
-          <li>
-            <a href="/nuevo">Nuevo</a>
-          </li>
-          <li>
-            <a href="/lista-componente">Lista Comp.</a>
-          </li>
-          <li>
-            <a href="/acerca-de">Acerca de</a>
-          </li>
+          
         </ul>
       </nav>
     </header>
       <Nuxt /><!-- Contenidos de las páginas-->
+
+      
     <footer><!-- contenido del footer -->
-      Ejemplo TBD
+     <br>
+     <br>
+      Entrega 1 - Grupo 7
     </footer>
   </div>
 </template>
