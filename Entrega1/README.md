@@ -11,3 +11,5 @@ Instrucciones de instalación y ejecución
 - Debe ingresar un id de voluntario para ver todas las tareas a las que ha sido seleccionado.
 - Al presionar el botón "Buscar" aparecerá una lista de tareas, las cuales puede Aceptar, Rechazar, Cancelar o Terminar. 
 - Al presionar uno de los botones, la ventana se actualizará (eliminando todo el contenido) y la acción quedará realizada, la cual puede ser comprobada en la tabla log.
+
+

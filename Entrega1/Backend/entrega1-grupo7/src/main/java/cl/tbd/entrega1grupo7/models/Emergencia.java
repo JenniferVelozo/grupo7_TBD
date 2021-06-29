@@ -8,6 +8,7 @@ public class Emergencia {
     private Date finicio;
     private Date ffin;
     private Integer id_institucion;
+    
 
     public Integer getId() {
         return id;
