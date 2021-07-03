@@ -1,5 +1,7 @@
 package cl.tbd.entrega1grupo7.models;
 import java.util.Date;
+import org.postgis.PGgeometry;
+import org.postgis.Point;
 
 public class Emergencia {
     private Integer id;
@@ -8,7 +10,25 @@ public class Emergencia {
     private Date finicio;
     private Date ffin;
     private Integer id_institucion;
+    private double longitude;
+    private double latitude;
+    //private PGgeometry location;
     
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
     public Integer getId() {
         return id;
@@ -57,4 +77,11 @@ public class Emergencia {
     public void setIdInstitucion(Integer id_institucion) {
         this.id_institucion = id_institucion;
     }
+
+    /*public PGgeometry getLocation() {
+        return location;
+    }
+    public void setLocation(PGgeometry location) {
+        this.location = location;
+    }*/
 }

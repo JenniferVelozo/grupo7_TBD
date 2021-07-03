@@ -3,6 +3,10 @@ package cl.tbd.entrega1grupo7.services;
 import cl.tbd.entrega1grupo7.models.Emergencia;
 import cl.tbd.entrega1grupo7.repositories.EmergenciaRepository;
 
+import org.postgis.Geometry;
+import org.postgis.PGgeometry;
+import org.postgis.Point;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,5 +59,10 @@ public class EmergenciaService {
     public List<Emergencia> deleteEmergencia(@PathVariable Integer id){
         emergenciaRepository.deleteEmergencia(id);
         return emergenciaRepository.getAllEmergencias();
+    }
+
+    @GetMapping("/emergencias/{idVol}")
+    public List<Emergencia> emergenciasByLocation(@PathVariable Integer idVol) {
+        return emergenciaRepository.emergenciasByLocation(idVol);
     }
 }

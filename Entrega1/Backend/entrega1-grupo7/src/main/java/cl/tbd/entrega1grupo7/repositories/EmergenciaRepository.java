@@ -8,4 +8,6 @@ public interface EmergenciaRepository {
     public Emergencia createEmergencia(Emergencia emergencia);
     public Emergencia updateEmergencia(Emergencia emergencia, Integer id);
     public List<Emergencia> deleteEmergencia(Integer id);
+    public String getJson(Integer id);
+    public List<Emergencia> emergenciasByLocation(Integer id_voluntario);
 }

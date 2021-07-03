@@ -8,4 +8,5 @@ public interface VoluntarioRepository {
     public Voluntario createVoluntario(Voluntario voluntario);
     public Voluntario updateVoluntario(Voluntario voluntario, Integer id);
     public List<Voluntario> deleteVoluntario(Integer id);
+    public String getJson(Integer id);
 }

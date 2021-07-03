@@ -3,6 +3,10 @@ package cl.tbd.entrega1grupo7.services;
 import cl.tbd.entrega1grupo7.models.Voluntario;
 import cl.tbd.entrega1grupo7.repositories.VoluntarioRepository;
 
+import org.postgis.Geometry;
+import org.postgis.PGgeometry;
+import org.postgis.Point;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

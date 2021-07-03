@@ -1,0 +1,2 @@
+Una vez creada la base de datos con sus tablas pobladas, se debe definir el srid de la tabla division_regional con la siguiente sentencia en pgAdmin:
+SELECT UpdateGeometrySRID('public', 'division_regional', 'geom', 4326);
