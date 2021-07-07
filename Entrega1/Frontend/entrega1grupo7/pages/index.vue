@@ -1,89 +1,101 @@
 <template>
-    <div class="container">
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1>Buscar voluntario</h1>
-    <form>
-        <div class="form-item">
-            <label for="id_voluntario">ID voluntario</label>
-            <input type="number" id="id_voluntario" v-model="id_voluntario" name="id_voluntario">
-        </div>
-        <div>
-            <button type="button" v-on:click="getData(id_voluntario)" class="main"> Buscar</button>
-        </div>
-    </form>
-    <br>
-    <br>
-    <h1>Tareas del voluntario</h1>
-    <ul class="item-list">
-      <li v-for="(item, index) in items" :key="index">
-       <!-- <img :src="'https://loremflickr.com/160/120/dog?lock=%27+i%22/%3E--%3E -->
-        <!-- {{index}} -->
-        <p>Nombre Tarea: {{item.nombre}}
-        Descripción: {{item.descrip}}
-        Fecha de Inicio: {{item.finicio}}
-        Fecha de Término: {{item.ffin}}</p>
-        <p>
-        <button type="button" v-on:click="send(item.id, id_voluntario)" class="main">Aceptar</button>
-        <button type="button" v-on:click="send2(item.id, id_voluntario)" class="main">Rechazar</button>
-        <button type="button" v-on:click="send3(item.id, id_voluntario)" class="main">Cancelar</button>
-        <button type="button" v-on:click="send4(item.id, id_voluntario)" class="main">Terminar</button>
-        </p>  
-      </li>
+    <div class="mt-5">
 
-    </ul>
-    <div v-if="items.length==0" class="empty-list">
-      <em>No se han asignado tareas</em>
-    </div>
-  </div>
+        <form> <center>
+            <div class="form-item">
+                <label for="finicio"> Fecha Inicio</label>
+                <input type="date" id="finicio" v-model="finicio" name="finicio">
+                <label for="ffin">Fecha Fin</label>
+                <input type="date" id="ffin" v-model="ffin" name="ffin">
+            </div>
+                 <button type="button" v-on:click="guardarFechas(finicio, ffin)" class="main"> INGRESAR FECHAS </button>
+            <div>
+            </div>
+        </center> </form>
+
+        <b-row>
+            <!--columna 1 -->
+            <b-col cols="12" md="6">
+                <p> <b> <center> LISTA DE EMERGENCIAS </center> </b> </p>
+                <ul class="item-list"> 
+                    <li v-for="(emergencia, index) in emergencias" :key="index"> 
+                    <!-- <img :src="'https://loremflickr.com/160/120/dog?lock=%27+i%22/%3E--%3E -->
+                        <!-- {{index}} -->
+                        <p> <b> Nombre: </b> {{emergencia.nombre}}
+                        <b> Descripción:</b> {{emergencia.descrip}}
+                        <button type="button" v-on:click="buscarTareas(emergencia.id)" class="main"> VER </button>
+                        </p>
+
+                                                            
+                    </li>
+
+                </ul>
+
+            </b-col>
+            
+            <!--columna 2 -->
+            <b-col cols="12" md="6">
+                <p> <b> <center> LISTA DE TAREAS </center> </b> </p>
+                <ul class="item-list"> 
+                    <li v-for="(tarea, index) in tareasFiltradas" :key="index"> 
+                    <!-- <img :src="'https://loremflickr.com/160/120/dog?lock=%27+i%22/%3E--%3E -->
+                        <!-- {{index}} -->
+                        <p> <b> Nombre Tarea: </b> {{tarea.nombreTarea}}
+                        <b> Menor Ranking:</b> {{tarea.puntaje}}
+                        <b> Voluntario con el menor ranking:</b> {{tarea.nombreVol}}
+                        </p>
+
+                                                            
+                    </li>
+
+                </ul>
+            </b-col>
+        </b-row>
+    </div>    
 </template>
 
 <script>
 export default {
-    //Función que contiene los datos del componente
+    name:'index',
+
+
     data(){
         return{
             //Lista de ítems a mostrar
-            items:[]
+            emergencias:[],
+            tareasFiltradas:[],
+            fechaInicio:"",
+            fechaFin:""
         }
     },
     methods:{
 
-        
         //Función asíncrona para consultar los datos
-        getData: async function(id_voluntario){
-
-            
-            
+        getDataEmergencia: async function(){            
             try {
                 //let response = await this.$axios.get('/tareas/{{item.id}}');
-                //console.log('get data');
-                console.log(id_voluntario);
-                let response = await this.$axios.get('/tareas/' + id_voluntario);
-                this.items  = response.data;
+                let response = await this.$axios.get('/emergencias');
+                this.emergencias  = response.data;
                 console.log(response)
             } catch (error) {
                 console.log('error', error);
             }
         },
-        //aceptar
-        send: async function(id_tarea, id_voluntario){
+
+        buscarTareas: async function(id_emergencia){
             this.message = '';
             //envío de datos del formulario
             console.log('Entre funcion boton')
             try {
-                console.log(id_tarea)
-                //var result = await this.$axios.put('/rankings/824/{id_tarea}/2');
-                var result = await this.$axios.put('/rankings/' + id_voluntario + '/' + id_tarea + '/2');
+                //console.log(this.fechaInicio)
+                //console.log(this.fechaFin)
+                var result = await this.$axios.get('/voluntarios/' + id_emergencia + '/' + this.fechaInicio + '/' + this.fechaFin);
                 console.log('Pasa var result')
-                let ranking = result.data;
+                this.tareasFiltradas  = result.data;
                 //mensaje de exito 
-                this.message = `Se actualizó el ranking con flg_participa: ${ranking.flg_participa}`;
 
                 //Actualizar página
-                location. reload('/rankings/' + id_voluntario)
+                //location. reload('/rankings/' + id_voluntario)
                 
             } catch (error) {
                 console.log('entro al error')
@@ -92,83 +104,25 @@ export default {
                 this.message = 'Ocurrió un error'
             }
         },
-        //Rechazar
-        send2: async function(id_tarea, id_voluntario){
-            this.message = '';
-            //envío de datos del formulario
-            console.log('Entre funcion boton')
-            try {
-                console.log(id_tarea)
-                //var result = await this.$axios.put('/rankings/824/{id_tarea}/');
-                var result = await this.$axios.put('/rankings/' + id_voluntario + '/' + id_tarea + '/0');
-                console.log('Pasa var result')
-                let ranking = result.data;
-                //mensaje de exito 
-                this.message = `Se actualizó el ranking con flg_participa: ${ranking.flg_participa}`;
 
-                //Actualizar página
-                location. reload('/rankings/' + id_voluntario)
-                
-            } catch (error) {
-                console.log('entro al error')
-                //mensaje de error
-                console.log('error', error)
-                this.message = 'Ocurrió un error'
-            }
-        },
-        //cancelar
-        send3: async function(id_tarea, id_voluntario){
-            this.message = '';
-            //envío de datos del formulario
-            console.log('Entre funcion boton')
+        guardarFechas: async function(finicio, ffin){
             try {
-                console.log(id_tarea)
-                //var result = await this.$axios.put('/rankings/824/{id_tarea}/2');
-                var result = await this.$axios.put('/rankings/' + id_voluntario + '/' + id_tarea + '/3');
-                console.log('Pasa var result')
-                let ranking = result.data;
-                //mensaje de exito 
-                this.message = `Se actualizó el ranking con flg_participa: ${ranking.flg_participa}`;
-
-                //Actualizar página
-                location. reload('/rankings/' + id_voluntario)
-                
+                //let response = await this.$axios.get('/tareas/{{item.id}}');
+                this.fechaInicio  = finicio;
+                this.fechaFin  = ffin;
             } catch (error) {
-                console.log('entro al error')
-                //mensaje de error
-                console.log('error', error)
-                this.message = 'Ocurrió un error'
-            }
-        },
-        //terminar
-        send4: async function(id_tarea, id_voluntario){
-            this.message = '';
-            //envío de datos del formulario
-            console.log('Entre funcion boton')
-            try {
-                console.log(id_tarea)
-                //var result = await this.$axios.put('/rankings/824/{id_tarea}/2');
-                var result = await this.$axios.put('/rankings/' + id_voluntario + '/' + id_tarea + '/4');
-                console.log('Pasa var result')
-                let ranking = result.data;
-                //mensaje de exito 
-                this.message = `Se actualizó el ranking con flg_participa: ${ranking.flg_participa}`;
-
-                //Actualizar página
-                location. reload('/rankings/' + id_voluntario)
-                
-            } catch (error) {
-                console.log('entro al error')
-                //mensaje de error
-                console.log('error', error)
-                this.message = 'Ocurrió un error'
+                console.log('error', error);
             }
         }
-
     },
+
+        
+
     //Función que se ejecuta al cargar el componente
     created:function(){
-        this.getData();
+        this.getDataEmergencia();
     }
+    
+
 }
 </script>

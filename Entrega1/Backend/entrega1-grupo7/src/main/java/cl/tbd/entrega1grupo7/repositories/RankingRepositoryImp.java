@@ -103,15 +103,17 @@ public class RankingRepositoryImp implements RankingRepository {
         }
     }
 
-    public Integer menorRanking(Integer id_tarea){
-        try(Connection conn = sql2o.open()){
-            return conn.createQuery("select min(ranking.puntaje) from ranking where ranking.id_tarea = :id_tarea")
-                    .executeAndFetch(Ranking.class);
-        } catch (Exception e) {
-            //System.out.println(e.getMessage());
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
+    //Borrar/comentar
+    // @Override
+    // public Integer menorRanking(Integer id_tarea){
+    //     try(Connection conn = sql2o.open()){
+    //         return conn.createQuery("select min(ranking.puntaje) from ranking where ranking.id_tarea = :id_tarea")
+    //                 .executeAndFetch(Ranking.class);
+    //     } catch (Exception e) {
+    //         //System.out.println(e.getMessage());
+    //         System.out.println(e.getMessage());
+    //         return null;
+    //     }
+    // }
 
 }

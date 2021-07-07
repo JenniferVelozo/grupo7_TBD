@@ -1,6 +1,7 @@
 package cl.tbd.entrega1grupo7.services;
 
 import cl.tbd.entrega1grupo7.models.Voluntario;
+import cl.tbd.entrega1grupo7.models.Consulta35;
 import cl.tbd.entrega1grupo7.repositories.VoluntarioRepository;
 
 import org.postgis.Geometry;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.sql.Date;
 import java.util.List;
 
 @CrossOrigin
@@ -60,4 +62,17 @@ public class VoluntarioService {
         voluntarioRepository.deleteVoluntario(id);
         return voluntarioRepository.getAllVoluntarios();
     }
+
+    @GetMapping("/voluntarios/{id_emergencia}/{finicio}/{ffin}")
+    public List<Consulta35> voluntariosByTareas(@PathVariable Integer id_emergencia, @PathVariable Date finicio, @PathVariable Date ffin){
+        return voluntarioRepository.voluntariosByTareas(id_emergencia, finicio, ffin);
+    }
+
+
+    //You can consume the path .../getAmount/2019-04-25
+    // @GetMapping("/getAmount/{dateTo}")
+    // public long getAmount(@PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo) {
+    //     long amountFetchedFromDb = callToDatabase(dateTo);
+    //     return amountFetchedFromDb;
+    // }
 }

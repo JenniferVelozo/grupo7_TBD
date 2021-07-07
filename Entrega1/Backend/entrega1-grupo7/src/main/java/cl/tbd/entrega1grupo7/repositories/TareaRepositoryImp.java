@@ -109,17 +109,18 @@ public class TareaRepositoryImp implements TareaRepository {
         }
     }
 
-    @Override
-    public List<Tarea> getTareasByEmergencia(Integer id_emergencia) {
-        try(Connection conn = sql2o.open()){
-            //return conn.createQuery("SELECT FROM tarea AS t LEFT JOIN ranking AS r ON r.id_tarea = t.id WHERE r.id_voluntario = :id")
-            return conn.createQuery("SELECT nombre, descrip FROM tarea WHERE tarea.id_emergencia = id_emergencia")
-                    .addParameter("id_emergencia", id_emergencia)
-                    .executeAndFetch(Tarea.class);
-        } catch (Exception e) {
-            //System.out.println(e.getMessage());
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
+    // //Borrar/comentar
+    // @Override
+    // public List<Tarea> getTareasByEmergencia(Integer id_emergencia) {
+    //     try(Connection conn = sql2o.open()){
+    //         //return conn.createQuery("SELECT FROM tarea AS t LEFT JOIN ranking AS r ON r.id_tarea = t.id WHERE r.id_voluntario = :id")
+    //         return conn.createQuery("SELECT nombre, descrip FROM tarea WHERE tarea.id_emergencia = id_emergencia")
+    //                 .addParameter("id_emergencia", id_emergencia)
+    //                 .executeAndFetch(Tarea.class);
+    //     } catch (Exception e) {
+    //         //System.out.println(e.getMessage());
+    //         System.out.println(e.getMessage());
+    //         return null;
+    //     }
+    // }
 }

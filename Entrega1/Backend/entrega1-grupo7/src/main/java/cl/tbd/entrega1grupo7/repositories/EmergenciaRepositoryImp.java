@@ -163,22 +163,23 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
 
-    @Override
-    public List<Emergencia> emergenciasByFecha(Date finicio, Date ffin){
-        try(Connection conn = sql2o.open()){
-            //final String query = "SELECT * FROM (SELECT e.id, e.nombre, st_x(st_astext( location)) AS longEme, st_y(st_astext(location)) AS latEme, ST_Contains(d.geom, e.location) as st_contains, salida2.nom_reg , salida2.nombre, salida2.long, salida2.lat FROM (SELECT salida.gid, salida.nom_reg , salida.nombre, salida.long, salida.lat FROM (SELECT d.gid,d.nom_reg,v.id, v.nombre, st_x(st_astext( location)) AS long, st_y(st_astext(location)) AS lat,  ST_Contains(d.geom, v.location) as st_contains FROM division_regional d, voluntario v WHERE v.id = :id_voluntario) as salida WHERE salida.st_contains = true) as salida2, emergencia e, division_regional d WHERE salida2.gid = d.gid) as salida3 WHERE salida3.st_contains = true;";
-            //mejor opcion
-            //final String query = "SELECT salida3.id, emergencia.nombre, emergencia.descrip, emergencia.finicio, emergencia.ffin FROM (SELECT e.id, e.nombre as nombreEmergencia, st_x(st_astext( location)) AS longEme, st_y(st_astext(location)) AS latEme, ST_Contains(d.geom, e.location) as st_contains, salida2.nom_reg , salida2.nombre, salida2.long, salida2.lat FROM (SELECT salida.gid, salida.nom_reg , salida.nombre, salida.long, salida.lat FROM (SELECT d.gid,d.nom_reg,v.id, v.nombre, st_x(st_astext( location)) AS long, st_y(st_astext(location)) AS lat,  ST_Contains(d.geom, v.location) as st_contains FROM division_regional d, voluntario v WHERE v.id = :id_voluntario) as salida WHERE salida.st_contains = true) as salida2, emergencia e, division_regional d WHERE salida2.gid = d.gid) as salida3, emergencia WHERE salida3.st_contains = true AND salida3.id = emergencia.id;";
-            //final String query = "SELECT * FROM (SELECT e.id, e.nombre as nombreEmergencia, st_x(st_astext( location)) AS longEme, st_y(st_astext(location)) AS latEme, ST_Contains(d.geom, e.location) as st_contains, salida2.nom_reg , salida2.nombre, salida2.long, salida2.lat FROM (SELECT salida.gid, salida.nom_reg , salida.nombre, salida.long, salida.lat FROM (SELECT d.gid,d.nom_reg,v.id, v.nombre, st_x(st_astext( location)) AS long, st_y(st_astext(location)) AS lat,  ST_Contains(d.geom, v.location) as st_contains FROM division_regional d, voluntario v WHERE v.id = :id_voluntario) as salida WHERE salida.st_contains = true) as salida2, emergencia e, division_regional d WHERE salida2.gid = d.gid) as salida3 WHERE salida3.st_contains = true;";
+    
+    //@Override
+    // public List<Emergencia> emergenciasByFecha(Date finicio, Date ffin){
+    //     try(Connection conn = sql2o.open()){
+    //         //final String query = "SELECT * FROM (SELECT e.id, e.nombre, st_x(st_astext( location)) AS longEme, st_y(st_astext(location)) AS latEme, ST_Contains(d.geom, e.location) as st_contains, salida2.nom_reg , salida2.nombre, salida2.long, salida2.lat FROM (SELECT salida.gid, salida.nom_reg , salida.nombre, salida.long, salida.lat FROM (SELECT d.gid,d.nom_reg,v.id, v.nombre, st_x(st_astext( location)) AS long, st_y(st_astext(location)) AS lat,  ST_Contains(d.geom, v.location) as st_contains FROM division_regional d, voluntario v WHERE v.id = :id_voluntario) as salida WHERE salida.st_contains = true) as salida2, emergencia e, division_regional d WHERE salida2.gid = d.gid) as salida3 WHERE salida3.st_contains = true;";
+    //         //mejor opcion
+    //         //final String query = "SELECT salida3.id, emergencia.nombre, emergencia.descrip, emergencia.finicio, emergencia.ffin FROM (SELECT e.id, e.nombre as nombreEmergencia, st_x(st_astext( location)) AS longEme, st_y(st_astext(location)) AS latEme, ST_Contains(d.geom, e.location) as st_contains, salida2.nom_reg , salida2.nombre, salida2.long, salida2.lat FROM (SELECT salida.gid, salida.nom_reg , salida.nombre, salida.long, salida.lat FROM (SELECT d.gid,d.nom_reg,v.id, v.nombre, st_x(st_astext( location)) AS long, st_y(st_astext(location)) AS lat,  ST_Contains(d.geom, v.location) as st_contains FROM division_regional d, voluntario v WHERE v.id = :id_voluntario) as salida WHERE salida.st_contains = true) as salida2, emergencia e, division_regional d WHERE salida2.gid = d.gid) as salida3, emergencia WHERE salida3.st_contains = true AND salida3.id = emergencia.id;";
+    //         //final String query = "SELECT * FROM (SELECT e.id, e.nombre as nombreEmergencia, st_x(st_astext( location)) AS longEme, st_y(st_astext(location)) AS latEme, ST_Contains(d.geom, e.location) as st_contains, salida2.nom_reg , salida2.nombre, salida2.long, salida2.lat FROM (SELECT salida.gid, salida.nom_reg , salida.nombre, salida.long, salida.lat FROM (SELECT d.gid,d.nom_reg,v.id, v.nombre, st_x(st_astext( location)) AS long, st_y(st_astext(location)) AS lat,  ST_Contains(d.geom, v.location) as st_contains FROM division_regional d, voluntario v WHERE v.id = :id_voluntario) as salida WHERE salida.st_contains = true) as salida2, emergencia e, division_regional d WHERE salida2.gid = d.gid) as salida3 WHERE salida3.st_contains = true;";
 
-            final String query = "SELECT * FROM emergencia WHERE emergencia";
+    //         final String query = "SELECT * FROM emergencia WHERE emergencia";
 
-            return conn.createQuery(query)
-                    .addParameter("id_voluntario", id_voluntario)
-                    .executeAndFetch(Emergencia.class);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
+    //         return conn.createQuery(query)
+    //                 .addParameter("id_voluntario", id_voluntario)
+    //                 .executeAndFetch(Emergencia.class);
+    //     } catch (Exception e) {
+    //         System.out.println(e.getMessage());
+    //         return null;
+    //     }
+    // }
 }

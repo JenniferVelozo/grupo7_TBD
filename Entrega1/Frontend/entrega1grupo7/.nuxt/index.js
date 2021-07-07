@@ -13,6 +13,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_plugin_d78933de from 'nuxt_plugin_plugin_d78933de' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_003295e3 from 'nuxt_plugin_bootstrapvue_003295e3' // Source: .\\bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_axios_cf52a898 from 'nuxt_plugin_axios_cf52a898' // Source: .\\axios.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -181,6 +182,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_plugin_d78933de(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_bootstrapvue_003295e3 === 'function') {
+    await nuxt_plugin_bootstrapvue_003295e3(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_cf52a898 === 'function') {
     await nuxt_plugin_axios_cf52a898(app.context, inject)
   }
@@ -194,7 +199,12 @@ async function createApp(ssrContext, config = {}) {
 
   // Wait for async component to be resolved first
   await new Promise((resolve, reject) => {
-    router.replace(app.context.route.fullPath, resolve, (err) => {
+    const { route } = router.resolve(app.context.route.fullPath)
+    // Ignore 404s rather than blindly replacing URL
+    if (!route.matched.length && process.client) {
+      return resolve()
+    }
+    router.replace(route, resolve, (err) => {
       // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
       if (!err._isRouter) return reject(err)
       if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()

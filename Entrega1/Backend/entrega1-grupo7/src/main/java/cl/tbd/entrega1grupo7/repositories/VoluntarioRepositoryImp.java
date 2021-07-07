@@ -1,9 +1,11 @@
 package cl.tbd.entrega1grupo7.repositories;
 
+import java.sql.Date;
 import cl.tbd.entrega1grupo7.models.Voluntario;
 import cl.tbd.entrega1grupo7.models.Ranking;
 import cl.tbd.entrega1grupo7.models.Tarea;
 import cl.tbd.entrega1grupo7.models.Emergencia;
+import cl.tbd.entrega1grupo7.models.Consulta35;
 import org.postgis.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -138,25 +140,34 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository {
         return null;
     }
 
+    //Borrar/comentar
+    // @Override
+    // public List<Voluntario> punto32Vol(Integer menorRanking, Integer id_tarea) {
+    //     try(Connection conn = sql2o.open()){
+    //         final String query = "SELECT v.id, v.nombre, v.fnacimiento FROM voluntario v, ranking r WHERE r.id_tarea = :id_tarea AND r.puntaje = :menorPuntaje AND v.id = r.id_voluntario;";
+    //         return conn.createQuery(query)
+    //                 .addParameter("menorRanking", menorRanking)
+    //                 .addParameter("id_tarea", id_tarea)
+    //                 .executeAndFetch(Voluntario.class);
+    //     } catch (Exception e) {
+    //         System.out.println(e.getMessage());
+    //         return null;
+    //     }
+    // }
+
+
     @Override
-    public List<Voluntario> punto32Vol(Integer menorRanking, Integer id_tarea) {
+    public List<Consulta35> voluntariosByTareas(Integer id_emergencia, Date finicio, Date ffin) {
         try(Connection conn = sql2o.open()){
-            final String query = "SELECT v.id, v.nombre, v.fnacimiento FROM voluntario v, ranking r WHERE r.id_tarea = :id_tarea AND r.puntaje = :menorPuntaje AND v.id = r.id_voluntario;";
-            return conn.createQuery(query)
-                    .addParameter("menorRanking", menorRanking)
-                    .addParameter("id_tarea", id_tarea)
-                    .executeAndFetch(Voluntario.class);
+            return conn.createQuery("SELECT v.id as id_voluntario, v.nombre as nombreVol, salida2.idT as id_tarea, salida2.nombreT as nombreTarea, salida2.min_punt as puntaje FROM (SELECT * FROM (SELECT t.id as idT,t.nombre as nombreT, t.finicio, t.ffin, MIN(puntaje) min_punt FROM tarea t INNER JOIN ranking r ON t.id = r.id_tarea AND t.id_emergencia= :id_emergencia AND t.finicio BETWEEN :finicio AND :ffin AND t.ffin BETWEEN :finicio AND :ffin GROUP BY t.id,t.nombre ORDER BY t.id) as salida1 INNER JOIN ranking r ON r.id_tarea = salida1.idT AND salida1.min_punt=r.puntaje) as salida2 INNER JOIN voluntario v ON salida2.id_voluntario = v.id ORDER BY salida2.idT")
+                    .addParameter("id_emergencia", id_emergencia)
+                    .addParameter("finicio", finicio)
+                    .addParameter("ffin", ffin)
+                    .executeAndFetch(Consulta35.class);
         } catch (Exception e) {
+            //System.out.println(e.getMessage());
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    }   
 }
-
-/*
-
-SELECT id_voluntario, id_tarea, puntaje
-	FROM ranking
-	GROUP BY id_tarea, id_voluntario, puntaje
-	ORDER BY id_voluntario, puntaje, id_tarea
-*/
