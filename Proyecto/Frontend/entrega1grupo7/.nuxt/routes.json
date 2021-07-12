@@ -1,0 +1,16 @@
+[
+  {
+    "name": "index1",
+    "path": "/index1",
+    "component": "E:\\\\grupo7_TBD\\\\Proyecto\\\\Frontend\\\\entrega1grupo7\\\\pages\\\\index1.vue",
+    "chunkName": "pages/index1",
+    "_name": "_5c55ebad"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "E:\\\\grupo7_TBD\\\\Proyecto\\\\Frontend\\\\entrega1grupo7\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_f1c98698"
+  }
+]
