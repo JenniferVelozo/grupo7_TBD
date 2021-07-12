@@ -13,7 +13,7 @@
     <footer><!-- contenido del footer -->
      <br>
      <br>
-      Entrega 1 - Grupo 7
+      <center> Entrega 2 - Grupo 7 </center>
     </footer>
   </div>
 </template>

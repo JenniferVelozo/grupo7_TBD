@@ -1,6 +1,6 @@
 package cl.tbd.entrega1grupo7.models;
 
-public class Consulta35 {
+public class Consulta32 {
     private Integer id_voluntario;
     private String nombreVol;
     private Integer id_tarea;

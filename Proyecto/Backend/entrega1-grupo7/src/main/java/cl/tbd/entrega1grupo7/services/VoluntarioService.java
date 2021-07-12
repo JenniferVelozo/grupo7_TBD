@@ -1,7 +1,7 @@
 package cl.tbd.entrega1grupo7.services;
 
 import cl.tbd.entrega1grupo7.models.Voluntario;
-import cl.tbd.entrega1grupo7.models.Consulta35;
+import cl.tbd.entrega1grupo7.models.Consulta32;
 import cl.tbd.entrega1grupo7.repositories.VoluntarioRepository;
 
 import org.postgis.Geometry;
@@ -64,7 +64,7 @@ public class VoluntarioService {
     }
 
     @GetMapping("/voluntarios/{id_emergencia}/{finicio}/{ffin}")
-    public List<Consulta35> voluntariosByTareas(@PathVariable Integer id_emergencia, @PathVariable Date finicio, @PathVariable Date ffin){
+    public List<Consulta32> voluntariosByTareas(@PathVariable Integer id_emergencia, @PathVariable Date finicio, @PathVariable Date ffin){
         return voluntarioRepository.voluntariosByTareas(id_emergencia, finicio, ffin);
     }
 
