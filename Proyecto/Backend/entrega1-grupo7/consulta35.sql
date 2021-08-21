@@ -61,5 +61,5 @@ INSERT INTO public.tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) VALU
 INSERT INTO public.tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad1',31, 13, 79);
 
 INSERT INTO public.tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 23, 13, 41);
-INSERT INTO public.tarea_habilidad2 nombre_tabla,id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 26, 15, 53);
-INSERT INTO public.tarea_habilidad2 (id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 29, 16, 38);
+INSERT INTO public.tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 26, 15, 53);
+INSERT INTO public.tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 29, 16, 38);
