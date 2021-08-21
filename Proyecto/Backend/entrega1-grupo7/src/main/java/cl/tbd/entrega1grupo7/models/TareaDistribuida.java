@@ -1,21 +1,12 @@
-/* Modelo a modificar */
-//package cl.tbd.entrega1grupo7.models;
-
 package cl.tbd.entrega1grupo7.models;
 
-//import org.springframework.data.annotation.Id;
-import org.bson.codecs.pojo.annotations.BsonId;
-import org.bson.types.ObjectId;
-import cl.tbd.entrega1grupo7.models.Voluntario;
 import java.util.Date;
-import java.util.List;
 
-public class Tarea {
 
-    //@Id private String id;
-    @BsonId
-    ObjectId _id;
+public class TareaDistribuida {
 
+    private String nombre_tabla;
+    private Integer id;
     private String nombre;
     private String descrip;
     private Integer cant_vol_requeridos;
@@ -24,35 +15,24 @@ public class Tarea {
     private Date finicio;
     private Date ffin;
     private Integer id_estado;
-    private List<Voluntario> voluntarios;
 
-    public void setVoluntarios(List<Voluntario> voluntarios) {
-        this.voluntarios = voluntarios;
+    public String getNombreTabla() {
+        return nombre_tabla;
     }
 
-    public List<Voluntario> getVol() {
-        return voluntarios;
+    public void setNombreTabla(String nombre_tabla) {
+        this.nombre_tabla = nombre_tabla;
     }
 
-    /*public Integer getId() {
-        return id;
+
+    public Integer getId() {
+        return this.id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }*/
-
-    public ObjectId getId() {
-        return this._id;
     }
 
-    public void setId(ObjectId id) {
-        this._id = id;
-    }
-    public String getStringId(){
-        return this._id.toString();
-    }
-    
     public String getNombre() {
         return nombre;
     }

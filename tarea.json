@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "6118775f0dbf5747092edf55"
+  },
+  "nombre": "nomre1",
+  "descrip": "hola",
+  "cant_vol_requeridos": 5,
+  "cant_vol_inscritos": 4,
+  "id_emergencia": 4,
+  "finicio": {
+    "$date": "2021-02-01T03:00:00Z"
+  },
+  "ffin": {
+    "$date": "2021-03-01T03:00:00Z"
+  },
+  "id_estado": 5
+}]

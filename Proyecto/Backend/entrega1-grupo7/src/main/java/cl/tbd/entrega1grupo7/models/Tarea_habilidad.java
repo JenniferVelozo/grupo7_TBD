@@ -1,9 +1,18 @@
 package cl.tbd.entrega1grupo7.models;
 
 public class Tarea_habilidad {
+    private String nombre_tabla;
     private Integer id;
     private Integer id_emehab;
     private Integer id_tarea;
+
+    public String getNombreTabla() {
+        return nombre_tabla;
+    }
+
+    public void setNombreTabla(String nombre_tabla) {
+        this.nombre_tabla = nombre_tabla;
+    }
 
     public Integer getId() {
         return id;

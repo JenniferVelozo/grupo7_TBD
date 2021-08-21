@@ -37,19 +37,59 @@ public class Tarea_habilidadRepositoryImp implements Tarea_habilidadRepository {
 
     @Override
     public Tarea_habilidad createTarea_habilidad(Tarea_habilidad tarea_habilidad) {
-        try(Connection conn = sql2o.open()){
-            //int insertedId = (int) 
-            conn.createQuery("INSERT INTO tarea_habilidad (id, id_emehab, id_tarea) values (:id, :id_emehab, :id_tarea)", true)
-                    .addParameter("id", tarea_habilidad.getId())
-                    .addParameter("id_emehab", tarea_habilidad.getIdEmehab())
-                    .addParameter("id_tarea", tarea_habilidad.getIdTarea())
-                    .executeUpdate();//.getKey();
-            //habilidad.setId(insertedId);
-            return tarea_habilidad;        
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }   
+        
+        int hash = tarea_habilidad.getId()%3;
+        if(hash == 0){
+            try(Connection conn = sql2o.open()){
+                tarea_habilidad.setNombreTabla("tarea_habilidad0");
+                //int insertedId = (int) 
+                conn.createQuery("INSERT INTO tarea_habilidad0 (nombre_tabla,id, id_emehab, id_tarea) values ('tarea_habilidad0', :id, :id_emehab, :id_tarea)", true)
+                        .addParameter("id", tarea_habilidad.getId())
+                        .addParameter("id_emehab", tarea_habilidad.getIdEmehab())
+                        .addParameter("id_tarea", tarea_habilidad.getIdTarea())
+                        .executeUpdate();//.getKey();
+                //habilidad.setId(insertedId);
+                //System.out.println(tarea_habilidad.getNombreTabla());
+                return tarea_habilidad;        
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+                return null;
+            }
+        }
+        if(hash == 1){
+            try(Connection conn = sql2o.open()){
+                tarea_habilidad.setNombreTabla("tarea_habilidad1");
+                //int insertedId = (int) 
+                conn.createQuery("INSERT INTO tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) values ('tarea_habilidad1', :id, :id_emehab, :id_tarea)", true)
+                        .addParameter("id", tarea_habilidad.getId())
+                        .addParameter("id_emehab", tarea_habilidad.getIdEmehab())
+                        .addParameter("id_tarea", tarea_habilidad.getIdTarea())
+                        .executeUpdate();//.getKey();
+                //habilidad.setId(insertedId);
+                return tarea_habilidad;        
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+                return null;
+            }
+        }
+        if(hash == 2){
+            try(Connection conn = sql2o.open()){
+                tarea_habilidad.setNombreTabla("tarea_habilidad2");
+                //int insertedId = (int) 
+                conn.createQuery("INSERT INTO tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) values ('tarea_habilidad2', :id, :id_emehab, :id_tarea)", true)
+                        .addParameter("id", tarea_habilidad.getId())
+                        .addParameter("id_emehab", tarea_habilidad.getIdEmehab())
+                        .addParameter("id_tarea", tarea_habilidad.getIdTarea())
+                        .executeUpdate();//.getKey();
+                //habilidad.setId(insertedId);
+                return tarea_habilidad;        
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+                return null;
+            }
+        }
+        return null;  
+         
     }
 
     @Override

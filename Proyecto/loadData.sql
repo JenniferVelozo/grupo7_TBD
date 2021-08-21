@@ -23435,8 +23435,33 @@ INSERT INTO public.vol_habilidad (id, id_voluntario, id_habilidad) VALUES (19999
 
 
 
+INSERT INTO public.tarea0 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea0',63, 'tarea_63', 'descrip_63', 18, 11, 2, '1993-09-28', '1999-12-09', 1);
+INSERT INTO public.tarea0 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea0',81, 'tarea_81', 'descrip_81', 14, 13, 2, '1918-09-5', '2004-12-26', 1);
+INSERT INTO public.tarea0 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea0',9, 'tarea_9', 'descrip_9', 98, 25, 2, '2010-10-13', '2017-12-04', 1);
+
+INSERT INTO public.tarea1 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea1',10, 'tarea_10', 'descrip_10', 8, 10, 2, '2012-11-13', '2018-12-08', 1);
+INSERT INTO public.tarea1 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea1',43, 'tarea_43', 'descrip_43', 79, 18, 2, '1999-10-13', '2008-11-02', 1);
+INSERT INTO public.tarea1 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea1',85, 'tarea_85', 'descrip_85', 23, 11, 2, '2002-09-13', '2010-10-03', 1);
+INSERT INTO public.tarea1 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea1',79, 'tarea_79', 'descrip_79', 46, 50, 2, '2011-07-13', '2011-11-04', 1);
+
+INSERT INTO public.tarea2 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea2', 41, 'tarea_41', 'descrip_41', 57, 11, 2, '2003-10-13', '2019-01-08', 1);
+INSERT INTO public.tarea2 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea2', 53, 'tarea_53', 'descrip_53', 43, 25, 2, '2005-10-11', '2020-03-09', 1);
+INSERT INTO public.tarea2 (nombre_tabla,id, nombre, descrip, cant_vol_requeridos, cant_vol_inscritos, id_emergencia, finicio, ffin, id_estado) VALUES ('tarea2', 38, 'tarea_38', 'descrip_38', 32, 24, 2, '1999-03-16', '2021-02-11', 1);
 
 
+
+INSERT INTO public.tarea_habilidad0 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad0',15, 1, 63);
+INSERT INTO public.tarea_habilidad0 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad0',18, 3, 81);
+INSERT INTO public.tarea_habilidad0 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad0',21, 4, 9);
+
+INSERT INTO public.tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad1',22, 5, 10);
+INSERT INTO public.tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad1',25, 10, 43);
+INSERT INTO public.tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad1',28, 12, 85);
+INSERT INTO public.tarea_habilidad1 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad1',31, 13, 79);
+
+INSERT INTO public.tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 23, 13, 41);
+INSERT INTO public.tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 26, 15, 53);
+INSERT INTO public.tarea_habilidad2 (nombre_tabla, id, id_emehab, id_tarea) VALUES ('tarea_habilidad2', 29, 16, 38);
 --
 -- TOC entry 2887 (class 2606 OID 17291)
 -- Name: eme_habilidad eme_habilidad_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres

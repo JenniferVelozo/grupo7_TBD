@@ -1,6 +1,7 @@
 package cl.tbd.entrega1grupo7.services;
 
 import cl.tbd.entrega1grupo7.models.Emergencia;
+import cl.tbd.entrega1grupo7.models.Consulta35;
 import cl.tbd.entrega1grupo7.repositories.EmergenciaRepository;
 
 import org.postgis.Geometry;
@@ -40,19 +41,19 @@ public class EmergenciaService {
         return String.format("Tienes %s emergencias!!", total);
     }
 
-    @PostMapping("/emergencias")
-    @ResponseBody
-    public Emergencia createEmergencia(@RequestBody Emergencia emergencia){
-        Emergencia result = emergenciaRepository.createEmergencia(emergencia);
-        return result;
-    }
+    // @PostMapping("/emergencias")
+    // @ResponseBody
+    // public Emergencia createEmergencia(@RequestBody Emergencia emergencia){
+    //     Emergencia result = emergenciaRepository.createEmergencia(emergencia);
+    //     return result;
+    // }
 
-    @PutMapping("/emergencias/{id}")
-    @ResponseBody
-    public Emergencia updateEmergencia(@RequestBody Emergencia emergencia, @PathVariable Integer id){
-        Emergencia result = emergenciaRepository.updateEmergencia(emergencia, id);
-        return result;
-    }
+    // @PutMapping("/emergencias/{id}")
+    // @ResponseBody
+    // public Emergencia updateEmergencia(@RequestBody Emergencia emergencia, @PathVariable Integer id){
+    //     Emergencia result = emergenciaRepository.updateEmergencia(emergencia, id);
+    //     return result;
+    // }
 
     @DeleteMapping("/emergencias/{id}")
     @ResponseBody
@@ -64,5 +65,10 @@ public class EmergenciaService {
     @GetMapping("/emergencias/{idVol}")
     public List<Emergencia> emergenciasByLocation(@PathVariable Integer idVol) {
         return emergenciaRepository.emergenciasByLocation(idVol);
+    }
+
+    @GetMapping("/emergencias/{id}/tareas")
+    public List<Consulta35> habilidadesPorEmergencia(@PathVariable Integer id) {
+        return emergenciaRepository.habilidadesPorEmergencia(id);
     }
 }

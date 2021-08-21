@@ -1,4 +1,4 @@
-package cl.tbd.entrega1grupo7.services;
+/*package cl.tbd.entrega1grupo7.services;
 
 import cl.tbd.entrega1grupo7.models.Voluntario;
 import cl.tbd.entrega1grupo7.models.Consulta32;
@@ -75,4 +75,44 @@ public class VoluntarioService {
     //     long amountFetchedFromDb = callToDatabase(dateTo);
     //     return amountFetchedFromDb;
     // }
+}*/
+
+package cl.tbd.entrega1grupo7.services;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import cl.tbd.entrega1grupo7.models.Voluntario;
+import cl.tbd.entrega1grupo7.repositories.VoluntarioRepository;
+
+@RestController
+public class VoluntarioService {
+    
+    private final VoluntarioRepository voluntarioRepository;
+    VoluntarioService(VoluntarioRepository voluntarioRepository){
+        this.voluntarioRepository = voluntarioRepository;
+    }
+    @GetMapping("/voluntarios/count")
+    public String countVoluntarios(){
+        int total = voluntarioRepository.countVoluntarios();
+        return String.format("Tienes %s voluntarios!!", total);
+    }
+
+    @GetMapping("/voluntarios")
+    public List<Voluntario> getVoluntarios(){
+        return voluntarioRepository.getVoluntarios();
+    }
+
+    @PostMapping("/voluntarios")
+    @ResponseBody
+    public Voluntario createVoluntario(@RequestBody Voluntario voluntario){
+        Voluntario result = voluntarioRepository.createVoluntario(voluntario);
+        return result;
+    }
+
 }

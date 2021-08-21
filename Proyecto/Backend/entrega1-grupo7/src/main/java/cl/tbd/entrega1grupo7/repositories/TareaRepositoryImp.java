@@ -1,4 +1,4 @@
-package cl.tbd.entrega1grupo7.repositories;
+/*package cl.tbd.entrega1grupo7.repositories;
 
 import cl.tbd.entrega1grupo7.models.Tarea;
 import cl.tbd.entrega1grupo7.models.Ranking;
@@ -123,4 +123,107 @@ public class TareaRepositoryImp implements TareaRepository {
     //         return null;
     //     }
     // }
+}*/
+
+package cl.tbd.entrega1grupo7.repositories;
+
+import org.bson.Document;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.eq;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import cl.tbd.entrega1grupo7.models.Tarea;
+
+import org.bson.codecs.pojo.annotations.BsonId;
+import org.bson.types.ObjectId;
+
+
+import cl.tbd.entrega1grupo7.models.Voluntario;
+
+/* Importaciones Consulta 23*/
+import java.util.Arrays;
+
+import com.mongodb.client.FindIterable;
+import org.bson.conversions.Bson;
+import java.util.concurrent.TimeUnit;
+
+
+import cl.tbd.entrega1grupo7.models.Ranking;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
+
+import com.mongodb.client.AggregateIterable;
+
+@Repository
+public class TareaRepositoryImp implements TareaRepository {
+
+    @Autowired
+    MongoDatabase database;
+
+    @Override
+    public int countTareas() {
+        MongoCollection<Document> collection = database.getCollection("tarea");
+        long count = collection.countDocuments();
+        return (int) count;
+    }
+
+    //Read
+    @Override
+    public List<Tarea> getTareas() {
+        MongoCollection<Tarea> collection = database.getCollection("tarea", Tarea.class);
+        List <Tarea> tareas = collection.find().into(new ArrayList<>());
+        
+        return tareas;
+    }
+
+    //Create
+    @Override
+    public Tarea createTarea(Tarea tarea) {
+        MongoCollection<Tarea> collection = database.getCollection("tarea", Tarea.class);
+        collection.insertOne(tarea);
+        return tarea;
+    }
+    
+    @Override
+    public Tarea showTarea(String nombre) {
+        MongoCollection<Tarea> collection = database.getCollection("tarea", Tarea.class);
+        Tarea collection2 = collection.find(eq("nombre", nombre)).first();
+        return collection2;
+    }
+
+
+    
+    @Override
+    public List<Voluntario> voluntariosEnTarea(String nombre){
+        MongoCollection<Tarea> collection = database.getCollection("tarea", Tarea.class);
+        //Tarea collection2 = collection.find(eq("nombre", nombre)).first();
+
+        AggregateIterable<Tarea> result = collection.aggregate(Arrays.asList(new Document("$lookup", new Document("from", "voluntario").append("localField", "nombre").append("foreignField", "nombreTarea").append("as", "voluntarios"))));
+
+        System.out.println(result);
+        //console.log(result);
+        List<Voluntario> voluntarios = new ArrayList<Voluntario>();
+        for(Tarea tarea : result) {
+            //System.out.println(tarea.getVol());
+            //System.out.println(tarea.getNombre());
+            //System.out.println(nombre);
+            if(nombre.equals(tarea.getNombre())){
+                //System.out.println("hola");
+                //System.out.println(tarea.getVol());
+                voluntarios = tarea.getVol();
+            }
+            
+        }
+        System.out.println(voluntarios);
+        return voluntarios;
+    }
+
 }
