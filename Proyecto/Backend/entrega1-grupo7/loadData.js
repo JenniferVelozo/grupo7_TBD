@@ -1,4 +1,4 @@
-+print("Cargando datos ...");
+print("Cargando datos ...");
 db.tarea.insertMany([
     {"nombre": "tarea_1", "descrip": "descrip_1", "cant_vol_requeridos": 5, "cant_vol_inscritos": 6, "id_emergencia": 1, "finicio": new Date(2021,02,03), "ffin": new Date(2021,03,01), "id_estado": 0},
     {"nombre": "tarea_2", "descrip": "descrip_2", "cant_vol_requeridos": 10, "cant_vol_inscritos": 5, "id_emergencia": 6, "finicio": new Date(2021,02,12), "ffin": new Date(2022,03,01), "id_estado": 1},

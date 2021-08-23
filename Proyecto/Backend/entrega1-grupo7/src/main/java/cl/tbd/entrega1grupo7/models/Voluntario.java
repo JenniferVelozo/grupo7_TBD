@@ -12,7 +12,6 @@ public class Voluntario {
     ObjectId _id;
 
     private String nombre;
-    private String nombreTarea;
     private Date fnacimiento;
     //private double longitude;
     //private double latitude;
